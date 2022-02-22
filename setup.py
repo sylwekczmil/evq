@@ -1,24 +1,45 @@
-import os
-from distutils.core import setup
+#!/usr/bin/env python
 
-current_directory = os.path.dirname(os.path.abspath(__file__))
-try:
-    with open(os.path.join(current_directory, 'README.md'), encoding='utf-8') as f:
-        long_description = f.read()
-except Exception:
-    long_description = ''
+"""The setup script."""
+
+from setuptools import setup, find_packages
+
+with open('README.rst') as readme_file:
+    readme = readme_file.read()
+
+requirements = [
+    'numpy>=1.18.5',
+]
+
+test_requirements = [
+    'pytest>=3',
+]
 
 setup(
-    name='evq',
-    version='1.0.0',
-    description='Evolving Vector Quantization for Classification',
-    long_description=long_description,
-    long_description_context_type='text/markdown',
-    author='Sylwester Czmil',
+    author="Sylwester Czmil",
     author_email='sylwekczmil@gmail.com',
-    url='https://github.com/sylwekczmil/evq',
-    packages=['evq'],
-    install_requires=[
-        'numpy>=1.18.5'
+    python_requires='>=3.6',
+    classifiers=[
+        'Development Status :: 2 - Pre-Alpha',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
+    description="EVQ: Evolving Vector Quantization for Classification",
+    install_requires=requirements,
+    license="MIT license",
+    long_description=readme,
+    include_package_data=True,
+    keywords='evq',
+    name='evq',
+    packages=find_packages(include=['evq', 'evq.*']),
+    test_suite='tests',
+    tests_require=test_requirements,
+    url='https://github.com/sylwekczmil/evq',
+    version='0.0.1',
+    zip_safe=False,
 )
