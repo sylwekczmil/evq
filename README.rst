@@ -9,9 +9,6 @@ Note
 Inspired by this algorithm and several others, I created a new one
 called SEVQ: https://github.com/sylwekczmil/sevq
 
-Installation
-============
-
 Inspiration
 ===========
 
