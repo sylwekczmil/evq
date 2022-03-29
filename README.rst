@@ -28,7 +28,7 @@ Installation
 
    # create venv and activate
    # install algorithm
-   pip3 evq
+   pip install evq
 
 Example usage
 =============
